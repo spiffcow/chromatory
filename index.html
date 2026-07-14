@@ -107,9 +107,12 @@
   .gallery figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);position:relative;background:#0b0d0f}
   .gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;transition:transform .5s ease}
   .gallery figure:hover img{transform:scale(1.05)}
-  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 12px;font-size:13px;color:#e9e4da;
-    background:linear-gradient(transparent,rgba(0,0,0,.75))}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 16px 12px;font-size:13px;color:#e9e4da;
+    background:linear-gradient(transparent,rgba(0,0,0,.8))}
+  .gallery figcaption .credit{display:block;margin-top:2px;font-size:11.5px;color:var(--dim);font-weight:500}
   .gallery figure.tall{grid-row:span 1}
+  .muted-note{max-width:70ch;margin:26px auto 0;color:var(--dim);font-size:13.5px}
+  .vid-credit{margin:-8px 0 4px;color:var(--dim);font-size:13px}
 
   /* ---- privacy band ---- */
   .band{background:radial-gradient(120% 140% at 50% 0%,rgba(59,228,231,.10),transparent 60%),var(--bg2);
@@ -188,6 +191,7 @@
           <li>Save lighting rigs and capture reference renders</li>
         </ul>
         <a class="btn primary" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">Open the Light Studio</a>
+        <p class="vid-credit">Model shown: <b>The Price of Magic</b> — sculpt by Nerikson</p>
       </div>
       <div class="media">
         <video autoplay muted loop playsinline preload="metadata" poster="assets/studio-price-of-magic.png">
@@ -207,6 +211,7 @@
           <li>Export a single watertight STL ready to print</li>
         </ul>
         <a class="btn primary" href="https://spiffcow.github.io/chromatory-light-studio/assembly/" target="_blank" rel="noopener">Open the Assembly Workbench</a>
+        <p class="vid-credit">Model shown: <b>Krymathor</b> — sculpt by Rescale Miniatures</p>
       </div>
       <div class="media">
         <video autoplay muted loop playsinline preload="metadata" poster="assets/assembly-krymathor-complete.png">
@@ -247,13 +252,14 @@
       <p>Real prints under Chromatory's Light Studio — the same interactive view you get on your own models.</p>
     </div>
     <div class="gallery reveal">
-      <figure><img src="assets/studio-price-of-magic.png" loading="lazy" alt="Silver NMM under arcane light" /><figcaption>The Price of Magic — arcane OSL &amp; NMM</figcaption></figure>
-      <figure><img src="assets/studio-krymathor.png" loading="lazy" alt="Krymathor dragon over a golden glow" /><figcaption>Krymathor — golden glow OSL</figcaption></figure>
-      <figure><img src="assets/studio-moment-of-rest.png" loading="lazy" alt="A Moment of Rest by firelight" /><figcaption>A Moment of Rest — firelight</figcaption></figure>
-      <figure><img src="assets/studio-pom-silver-nmm.png" loading="lazy" alt="Silver non-metallic metal" /><figcaption>Silver NMM look</figcaption></figure>
-      <figure><img src="assets/studio-pom-gold-nmm.png" loading="lazy" alt="Gold non-metallic metal" /><figcaption>Gold NMM — one click</figcaption></figure>
-      <figure><img src="assets/studio-pom-candle-osl.png" loading="lazy" alt="Candle OSL gradient" /><figcaption>Candle OSL — fire gradient</figcaption></figure>
+      <figure><img src="assets/studio-price-of-magic.png" loading="lazy" alt="Silver NMM under arcane light" /><figcaption>The Price of Magic — arcane OSL &amp; NMM<span class="credit">Sculpt: Nerikson</span></figcaption></figure>
+      <figure><img src="assets/studio-krymathor.png" loading="lazy" alt="Krymathor dragon over a golden glow" /><figcaption>Krymathor — golden glow OSL<span class="credit">Sculpt: Rescale Miniatures</span></figcaption></figure>
+      <figure><img src="assets/studio-moment-of-rest.png" loading="lazy" alt="A Moment of Rest by firelight" /><figcaption>A Moment of Rest — firelight<span class="credit">Sculpt: Nerikson</span></figcaption></figure>
+      <figure><img src="assets/studio-pom-silver-nmm.png" loading="lazy" alt="Silver non-metallic metal" /><figcaption>Silver NMM look<span class="credit">The Price of Magic · Nerikson</span></figcaption></figure>
+      <figure><img src="assets/studio-pom-gold-nmm.png" loading="lazy" alt="Gold non-metallic metal" /><figcaption>Gold NMM — one click<span class="credit">The Price of Magic · Nerikson</span></figcaption></figure>
+      <figure><img src="assets/studio-pom-candle-osl.png" loading="lazy" alt="Candle OSL gradient" /><figcaption>Candle OSL — fire gradient<span class="credit">The Price of Magic · Nerikson</span></figcaption></figure>
     </div>
+    <p class="center muted-note reveal">Miniatures shown are the work of their sculptors — <b>The Price of Magic</b> &amp; <b>A Moment of Rest</b> by Nerikson, <b>Krymathor</b> by Rescale Miniatures — used here to demonstrate Chromatory.</p>
   </div>
 </section>
 
@@ -289,7 +295,7 @@
 <footer>
   <div class="wrap">
     <a class="brand" href="#top"><img src="assets/chromatory-logo.png" alt="Chromatory" /></a>
-    <div>© <span id="yr"></span> Chromatory · The paint studio for miniature painters</div>
+    <div>© <span id="yr"></span> Chromatory · The paint studio for miniature painters<br><span style="color:var(--dim)">Miniatures shown by their sculptors: Nerikson &amp; Rescale Miniatures</span></div>
     <div style="display:flex;gap:22px">
       <a href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">Light Studio</a>
       <a href="https://spiffcow.github.io/chromatory-light-studio/assembly/" target="_blank" rel="noopener">Assembly</a>
