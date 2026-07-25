@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The full Chromatory studio · coming soon</title>
+<meta name="description" content="The full Chromatory studio: a local-first painting app that knows every paint you own, paints your actual 3D model, and connects to Claude, ChatGPT or a local model so your own AI can drive it. Coming soon." />
+<link rel="canonical" href="https://chromatory.com/studio.html" />
+<meta property="og:title" content="The full Chromatory studio · coming soon" />
+<meta property="og:description" content="A local-first painting studio that knows your paints, paints your 3D model, and lets Claude or ChatGPT drive it. Coming soon; the browser tools are free today." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chromatory.com/studio.html" />
+<meta property="og:site_name" content="Chromatory" />
+<meta property="og:image" content="https://chromatory.com/assets/studio-moment-of-rest.png" />
+<meta property="og:image:alt" content="A Moment of Rest (sculpted by Nerikson) rendered by firelight in Chromatory's Light Studio" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The full Chromatory studio · coming soon" />
+<meta name="twitter:description" content="A local-first painting studio that knows your paints, paints your 3D model, and lets Claude or ChatGPT drive it." />
+<meta name="twitter:image" content="https://chromatory.com/assets/studio-moment-of-rest.png" />
+<meta name="theme-color" content="#0b0d0f" />
+<link rel="icon" href="assets/chromatory-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0b0d0f; --bg2:#101418; --panel:#12171c; --line:rgba(236,231,220,.10);
+    --ink:#f1ece3; --muted:#9fb0bd; --dim:#6f8290;
+    --pink:#ef2579; --pink2:#d4006a; --teal:#3be4e7; --teal2:#21b8a6;
+    --grad:linear-gradient(100deg,var(--pink) 0%,#b23a8f 45%,var(--teal) 100%);
+    --maxw:1180px; --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:Poppins,Inter,sans-serif;line-height:1.15;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .glow{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+  .glow::before,.glow::after{content:"";position:absolute;width:60vw;height:60vw;border-radius:50%;filter:blur(90px);opacity:.20}
+  .glow::before{background:var(--pink);top:-18vw;left:-10vw}
+  .glow::after{background:var(--teal);top:30vw;right:-14vw;opacity:.16}
+
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+    background:rgba(11,13,15,.72);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;gap:20px;height:66px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:Poppins;font-weight:600;letter-spacing:.16em;font-size:15px}
+  .brand img{height:30px}
+  .nav nav{margin-left:auto;display:flex;align-items:center;gap:28px}
+  .nav nav a{color:var(--muted);font-size:14.5px;font-weight:500;transition:color .2s}
+  .nav nav a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14.5px;
+    padding:11px 20px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .25s ease,background .2s}
+  .btn.primary{background:linear-gradient(90deg,var(--pink) 0%,#b23a8f 45%,var(--teal) 100%);
+    border:0;padding:12px 21px;color:#0b0d0f;box-shadow:0 6px 26px rgba(239,37,121,.32)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(239,37,121,.42)}
+  .btn.ghost{border-color:var(--line);color:var(--ink);background:rgba(255,255,255,.02)}
+  .btn.ghost:hover{border-color:rgba(59,228,231,.5);color:#fff}
+  @media(max-width:760px){.nav nav a.navlink{display:none}}
+
+  .hero{text-align:center;padding:72px 0 30px;position:relative}
+  .hero h1{font-size:clamp(30px,5vw,54px);font-weight:600;margin:.2em auto .35em;max-width:18ch}
+  .hero p.lead{color:var(--muted);font-size:clamp(16px,2.1vw,20px);max-width:62ch;margin:0 auto 30px}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .soon{display:inline-flex;align-items:center;gap:9px;font-family:Poppins;font-weight:600;font-size:13px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(59,228,231,.35);
+    border-radius:999px;padding:7px 16px;background:rgba(59,228,231,.06)}
+  .soon .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal)}
+
+  section{padding:58px 0;position:relative}
+  .eyebrow{font-family:Poppins;font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:12.5px;color:var(--teal);margin-bottom:14px}
+  .sec-head{max-width:66ch}
+  .sec-head h2{font-size:clamp(26px,3.6vw,40px);font-weight:600;margin:0 0 12px}
+  .sec-head p{color:var(--muted);font-size:17px;margin:0}
+  .center{text-align:center;margin-left:auto;margin-right:auto}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:44px}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+    border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;transition:transform .2s ease,border-color .2s,box-shadow .25s}
+  .card:hover{transform:translateY(-4px);border-color:rgba(59,228,231,.35);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+  .card .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:22px;
+    background:rgba(239,37,121,.12);border:1px solid rgba(239,37,121,.25);margin-bottom:16px}
+  .card h3{font-size:18.5px;margin:0 0 8px;font-weight:600}
+  .card p{color:var(--muted);font-size:14.5px;margin:0}
+
+  /* chat vignette */
+  .chat{max-width:760px;margin:42px auto 0;display:flex;flex-direction:column;gap:14px}
+  .msg{border:1px solid var(--line);border-radius:16px;padding:16px 20px;font-size:15px}
+  .msg.you{align-self:flex-end;background:rgba(239,37,121,.08);border-color:rgba(239,37,121,.25);max-width:82%}
+  .msg.ai{align-self:flex-start;background:rgba(59,228,231,.05);border-color:rgba(59,228,231,.22);max-width:88%;color:var(--muted)}
+  .msg.ai b{color:var(--ink)}
+  .msg .who{display:block;font-family:Poppins;font-weight:600;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+  .msg.you .who{color:var(--pink)}
+  .msg.ai .who{color:var(--teal)}
+
+  .band{background:radial-gradient(120% 140% at 50% 0%,rgba(59,228,231,.10),transparent 60%),var(--bg2);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+  .media{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 24px 60px rgba(0,0,0,.5);background:#000;position:relative;max-width:900px;margin:40px auto 0}
+  .media img{width:100%}
+  .media figcaption{padding:10px 16px;font-size:12.5px;color:var(--dim)}
+
+  footer{border-top:1px solid var(--line);padding:40px 0;color:var(--dim);font-size:13.5px}
+  footer .wrap{display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+  footer .brand img{height:26px}
+  footer a{color:var(--muted)}footer a:hover{color:var(--ink)}
+  .smallprint{max-width:78ch;margin:18px auto 0;color:var(--dim);font-size:12.5px;text-align:center}
+</style>
+<!-- Cloudflare Web Analytics (cookieless, no consent banner) -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ab1ea526538d40adb19aada8721da039"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<div class="glow"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/chromatory-icon.png" alt="" />CHROMATORY</a>
+    <nav>
+      <a class="navlink" href="./#free">Free tools</a>
+      <a class="navlink" href="./#gallery">Gallery</a>
+      <a class="navlink" href="https://discord.gg/UExX6gPhwM" target="_blank" rel="noopener">&#128172; Discord</a>
+      <a class="btn primary" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">Launch Studio</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="soon"><i class="dot"></i> Coming soon</span>
+    <h1>The full <span class="grad-text">Chromatory</span> studio</h1>
+    <p class="lead">The free browser tools are the warm-up. The full studio is a local-first app
+    for your own PC that knows every paint on your shelf, matches colours with real colour
+    science, paints your actual 3D model, and remembers every project. It is in the final stretch
+    of development right now.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="https://discord.gg/UExX6gPhwM" target="_blank" rel="noopener">&#128172; Get notified on Discord</a>
+      <a class="btn ghost" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">Try the free tools today</a>
+    </div>
+  </div>
+</section>
+
+<!-- BRING YOUR OWN AI -->
+<section class="band" id="ai">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Bring your own AI</div>
+      <h2>Drive it from <span class="grad-text">Claude or ChatGPT</span></h2>
+      <p>Chromatory doesn't sell you another chatbot subscription. It plugs into the AI you
+      already use. Connect Claude, ChatGPT, or a model running on your own PC, and your assistant
+      gets Chromatory's actual tools: your real paint inventory, colour matching, your project
+      history, and the Light Studio itself.</p>
+    </div>
+    <div class="chat">
+      <div class="msg you"><span class="who">You, to your AI</span>
+        Here's a photo of a painted mini I love. Can I match this scheme with my paints?</div>
+      <div class="msg ai"><span class="who">Your AI, using Chromatory</span>
+        It reads the photo area by area, samples the real colours, and matches every one against
+        the paints <b>you actually own</b>, with honest close-enough grades. No invented paints,
+        no wishful substitutions.</div>
+      <div class="msg you"><span class="who">You</span>
+        Paint my model like that so I can see it from the back too.</div>
+      <div class="msg ai"><span class="who">Your AI, using Chromatory</span>
+        It splits your STL into areas, colours each one, and renders the painted model from any
+        angle. <b>One consistent scheme all the way around</b>, because it painted the 3D model,
+        not four separate pictures.</div>
+      <div class="msg you"><span class="who">You, next weekend</span>
+        Where did we leave off?</div>
+      <div class="msg ai"><span class="who">Your AI, using Chromatory</span>
+        Sessions are logged to the project, so the conversation picks up with the scheme, the
+        mixes and the decisions already on the table.</div>
+    </div>
+    <p class="smallprint">Built on open standards (an MCP server and an OpenAPI tool server), so
+    it isn't locked to one vendor: Claude Desktop and Claude Code, ChatGPT and Codex, LM Studio,
+    Open WebUI and local models can all connect. Your AI account stays yours, and Chromatory's
+    tools run on your machine.</p>
+  </div>
+</section>
+
+<!-- WHAT'S IN IT -->
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">What's in the studio</div>
+      <h2>Built around <span class="grad-text">your</span> paints</h2>
+      <p>Chromatory knows what's actually in your paint drawer, so every match, mix and scheme it
+      suggests is something you could sit down and paint tonight.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="ico">📷</div><h3>Copy a mini from a photo</h3><p>Point it at a painted miniature you love. Chromatory reads each area and works out a step-by-step scheme using the paints you already own.</p></div>
+      <div class="card"><div class="ico">🎨</div><h3>Paint the model itself</h3><p>Describe a scheme or match a reference, and it paints the regions of your actual 3D model. Every angle agrees, because there is only one model.</p></div>
+      <div class="card"><div class="ico">🎯</div><h3>Colour match &amp; mixing</h3><p>Real colour science (CIEDE2000 and Kubelka-Munk) finds the closest paint you own, or the mix that gets you there.</p></div>
+      <div class="card"><div class="ico">🗄️</div><h3>Paint inventory</h3><p>Catalogue your collection with swatch photos, and name a paint straight from a snap of the bottle.</p></div>
+      <div class="card"><div class="ico">🌗</div><h3>Shadow &amp; highlight guide</h3><p>Give it a scheme photo and a lighting render. For each element it hands back the shadow, midtone and highlight paints, and shows you where each one falls.</p></div>
+      <div class="card"><div class="ico">📓</div><h3>A memory for every project</h3><p>Photos, decisions, recipes and whole painting conversations land in the project log, so next month's session starts where this one ended.</p></div>
+      <div class="card"><div class="ico">🤖</div><h3>AI painting coach</h3><p>Advice, a painting log and scheme mockups, all built on the paints you really have. Runs on your own AI, a local model, or turns off completely.</p></div>
+      <div class="card"><div class="ico">🔒</div><h3>Local-first and private</h3><p>Everything runs on your own PC. Your data, photos and models stay with you. Pair your phone or browser to it whenever you want the bench in your hand.</p></div>
+    </div>
+    <p class="smallprint">The Light Studio and Assembly Workbench stay <a href="./#free" style="color:var(--teal)">free in your browser</a>, and they're also built into the studio.</p>
+  </div>
+</section>
+
+<!-- WHEN -->
+<section>
+  <div class="wrap center" style="max-width:66ch">
+    <div class="eyebrow">When?</div>
+    <h2 style="font-size:clamp(24px,3.4vw,36px);margin:0 0 12px">Soon, and honestly</h2>
+    <p style="color:var(--muted);font-size:17px">This is an indie project, and the studio is
+    genuinely close: the paint engine, the 3D pipeline and the AI connections all work today.
+    What's left is the polish that makes it feel finished. The plan is a one-time purchase with a
+    free demo you can try first, not a subscription, and the browser tools stay free either way.
+    The Discord is where news lands first.</p>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn primary" href="https://discord.gg/UExX6gPhwM" target="_blank" rel="noopener">&#128172; Join the Discord</a>
+      <a class="btn ghost" href="./">Back to the free tools</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/chromatory-logo.png" alt="Chromatory" /></a>
+    <div>© <span id="yr"></span> Chromatory · A paint studio for miniature painters<br>
+      <span style="color:var(--dim)">Claude and ChatGPT are products of Anthropic and OpenAI. Paint
+      names are trademarks of their makers. Chromatory is an independent project, affiliated with
+      none of them.</span></div>
+    <div style="display:flex;gap:22px">
+      <a href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">Light Studio</a>
+      <a href="https://spiffcow.github.io/chromatory-light-studio/assembly/" target="_blank" rel="noopener">Assembly</a>
+      <a href="https://discord.gg/UExX6gPhwM" target="_blank" rel="noopener">Discord</a>
+      <a href="./">Home</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
