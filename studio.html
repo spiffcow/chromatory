@@ -63,7 +63,11 @@
   .btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(239,37,121,.42)}
   .btn.ghost{border-color:var(--line);color:var(--ink);background:rgba(255,255,255,.02)}
   .btn.ghost:hover{border-color:rgba(59,228,231,.5);color:#fff}
-  @media(max-width:760px){.nav nav a.navlink{display:none}}
+  @media(max-width:760px){
+    .nav nav a.navlink{display:none}
+    .nav .wrap{gap:12px}
+    .nav .btn.primary{padding:8px 15px;font-size:13px;box-shadow:0 4px 14px rgba(239,37,121,.28)}
+  }
 
   .hero{text-align:center;padding:72px 0 30px;position:relative}
   .hero h1{font-size:clamp(30px,5vw,54px);font-weight:600;margin:.2em auto .35em;max-width:18ch}

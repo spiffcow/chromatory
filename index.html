@@ -81,7 +81,15 @@
   .btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(239,37,121,.42)}
   .btn.ghost{border-color:var(--line);color:var(--ink);background:rgba(255,255,255,.02)}
   .btn.ghost:hover{border-color:rgba(59,228,231,.5);color:#fff}
-  @media(max-width:760px){.nav nav a.navlink{display:none}}
+  /* two-line CTA: main label + a small sub-line inside the same pill */
+  .btn.stack{flex-direction:column;gap:1px;line-height:1.2;padding:10px 26px}
+  .btn .sub{display:block;font-size:12px;font-weight:600;opacity:.75;letter-spacing:.05em}
+  @media(max-width:760px){
+    .nav nav a.navlink{display:none}
+    .nav .wrap{gap:12px}
+    /* the launch pill was hero-sized in a 66px bar; keep it a compact chip on phones */
+    .nav .btn.primary{padding:8px 15px;font-size:13px;box-shadow:0 4px 14px rgba(239,37,121,.28)}
+  }
 
   /* ---- hero ---- */
   .hero{text-align:center;padding:78px 0 40px;position:relative}
@@ -185,7 +193,7 @@
     <h1>A paint studio for <span class="grad-text">miniature painters</span></h1>
     <p class="lead">Work out your scheme, set up your lighting, and match colours to the paints already sitting on your shelf. All of it happens before the brush ever touches the model.</p>
     <div class="cta-row">
-      <a class="btn primary" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">▶ Launch the Light Studio (it's free)</a>
+      <a class="btn primary stack" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener"><span>▶ Launch the Light Studio</span><span class="sub">it's free</span></a>
       <a class="btn ghost" href="studio.html">🖥️ The full studio, coming soon</a>
     </div>
     <div class="badges">
