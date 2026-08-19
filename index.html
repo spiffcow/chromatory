@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Chromatory · a paint studio for miniature painters</title>
-<meta name="description" content="Work out your scheme, set up your lighting, and match colours to the paints already on your shelf. A free in-browser Light Studio (NMM and OSL) and STL Assembly Workbench. Your models never leave your device." />
+<meta name="description" content="Take the guesswork out of NMM and OSL. Place real lights around your model, see where every highlight lands, and match colours to the paints on your shelf. Desktop studio on itch.io with a free demo, plus free browser tools." />
 <link rel="canonical" href="https://chromatory.com/" />
 <meta property="og:title" content="Chromatory · a paint studio for miniature painters" />
 <meta property="og:description" content="Free in-browser Light Studio (NMM and OSL) and STL Assembly Workbench. Plan schemes, set up lighting, match your paints. Your models never leave your device." />
@@ -92,6 +92,14 @@
     /* the launch pill was hero-sized in a 66px bar; keep it a compact chip on phones */
     .nav .btn.primary{padding:8px 15px;font-size:13px;box-shadow:0 4px 14px rgba(239,37,121,.28)}
   }
+
+  /* Launch strip: the one line a returning visitor should not be able to miss. */
+  .launch-strip{display:block;text-align:center;text-decoration:none;color:#0d0f12;
+    background:linear-gradient(100deg,#ef2579,#35c4b5);padding:10px 16px;font-size:15px;
+    letter-spacing:.1px}
+  .launch-strip b{color:#0d0f12}
+  .launch-strip:hover{filter:brightness(1.06)}
+  @media (max-width:560px){.launch-strip{font-size:13.5px;padding:9px 12px}}
 
   /* ---- hero ---- */
   .hero{text-align:center;padding:78px 0 40px;position:relative}
@@ -183,25 +191,29 @@
       <a class="navlink" href="studio.html">Full studio</a>
       <a class="navlink" href="#gallery">Gallery</a>
       <a class="navlink" href="https://discord.gg/UExX6gPhwM" target="_blank" rel="noopener">&#128172; Discord</a>
-      <a class="btn primary" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">Launch</a>
+      <a class="navlink" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">Free Light Studio</a>
+      <a class="btn primary" href="https://spiffcow.itch.io/chromatory-studio" target="_blank" rel="noopener">Get Chromatory</a>
     </nav>
   </div>
 </header>
 
 <a id="top"></a>
+<a class="launch-strip" href="https://spiffcow.itch.io/chromatory-studio" target="_blank" rel="noopener">
+  <b>Chromatory Studio 1.0 is out now.</b> One-time purchase on itch.io, with a free demo. &rarr;
+</a>
 <section class="hero">
   <div class="wrap">
     <img class="logo" src="assets/chromatory-logo.png" alt="Chromatory" />
     <h1>A paint studio for <span class="grad-text">miniature painters</span></h1>
-    <p class="lead">Work out your scheme, set up your lighting, and match colours to the paints already sitting on your shelf. All of it happens before the brush ever touches the model.</p>
+    <p class="lead">Take the guesswork out of NMM and OSL. Place real lights around your actual model, see where every highlight lands, and match what you see to the paints already sitting on your shelf.</p>
     <div class="cta-row">
-      <a class="btn primary stack" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener"><span>▶ Launch the Light Studio</span><span class="sub">(it's free)</span></a>
-      <a class="btn ghost" href="studio.html">🖥️ The full studio, coming soon</a>
+      <a class="btn primary stack" href="https://spiffcow.itch.io/chromatory-studio" target="_blank" rel="noopener"><span>🖥️ Get the full studio</span><span class="sub">$19.99 on itch.io, free demo</span></a>
+      <a class="btn ghost" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">▶ Try the free browser Light Studio</a>
     </div>
     <div class="badges">
-      <span><i class="dot"></i> Runs in your browser</span>
-      <span><i class="dot"></i> No account, no install</span>
-      <span><i class="dot"></i> Your STL never leaves your device</span>
+      <span><i class="dot"></i> One-time purchase, no subscription</span>
+      <span><i class="dot"></i> Works offline, no account</span>
+      <span><i class="dot"></i> Your models never leave your machine</span>
     </div>
   </div>
 </section>
@@ -279,16 +291,19 @@
 <section id="features">
   <div class="wrap center">
     <div class="sec-head center">
-      <div class="eyebrow">The full studio · coming soon</div>
+      <div class="eyebrow">The full studio · out now on itch.io</div>
       <h2>Built around <span class="grad-text">your</span> paints. Driven by <span class="grad-text">your</span> AI.</h2>
       <p>The full Chromatory studio is a local-first app that knows every paint on your shelf,
       matches colours with real colour science, and paints your actual 3D model so every angle
-      agrees. And you don't get yet another chatbot: connect Claude, ChatGPT or a local model,
-      and your own AI drives the whole bench.</p>
+      agrees. The optional AI is a painting coach, not another chatbot: it runs on free local AI
+      or the ChatGPT or Claude subscription you already pay for, knows your projects, and gives
+      feedback on your WIP photos. The free demo is the full app with one project, and your shelf
+      carries over when you buy.</p>
     </div>
     <div class="cta-row" style="margin-top:30px">
-      <a class="btn primary" href="studio.html">See the full studio →</a>
-      <a class="btn ghost" href="https://discord.gg/UExX6gPhwM" target="_blank" rel="noopener">💬 Get notified on Discord</a>
+      <a class="btn primary" href="https://spiffcow.itch.io/chromatory-studio" target="_blank" rel="noopener">Get Chromatory on itch.io →</a>
+      <a class="btn ghost" href="studio.html">See what's inside</a>
+      <a class="btn ghost" href="https://discord.gg/UExX6gPhwM" target="_blank" rel="noopener">💬 Join the Discord</a>
     </div>
   </div>
 </section>
@@ -326,15 +341,16 @@
     <div class="sec-head center">
       <div class="eyebrow">Get started</div>
       <h2>Start free, wherever you paint</h2>
-      <p>Jump into the browser tools right now. The full local-first studio for your PC is on its way.</p>
+      <p>Try the free demo or the browser tools right now. The full studio is a one-time purchase, DRM-free, on itch.io.</p>
     </div>
     <div class="platforms">
+      <div class="plat"><span class="pico">🖥️</span><div><b>Windows desktop</b><small>$19.99 on itch.io, free demo</small></div></div>
       <div class="plat"><span class="pico">🌐</span><div><b>Browser tools</b><small>Light Studio and Assembly, free</small></div></div>
-      <div class="plat"><span class="pico">🖥️</span><div><b>Windows desktop</b><small>The full studio, coming soon</small></div></div>
       <div class="plat"><span class="pico">📱</span><div><b>Phone at the bench</b><small>Pairs to the full studio at home</small></div></div>
     </div>
     <div class="cta-row" style="margin-top:34px">
-      <a class="btn primary" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">▶ Launch the Light Studio</a>
+      <a class="btn primary" href="https://spiffcow.itch.io/chromatory-studio" target="_blank" rel="noopener">🖥️ Get Chromatory on itch.io</a>
+      <a class="btn ghost" href="https://spiffcow.github.io/chromatory-light-studio/" target="_blank" rel="noopener">▶ Launch the Light Studio</a>
       <a class="btn ghost" href="https://spiffcow.github.io/chromatory-light-studio/assembly/" target="_blank" rel="noopener">🧩 Open the Assembly Workbench</a>
     </div>
   </div>
