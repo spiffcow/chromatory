@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy · Chromatory</title>
+<meta name="description" content="What Chromatory does with your data: it stays on your PC. The short list of times the app talks to the internet, and why." />
+<link rel="canonical" href="https://chromatory.com/privacy.html" />
+<link rel="icon" href="assets/chromatory-icon.png" />
+<style>
+  :root { --bg:#0b0d0f; --card:#14181c; --text:#e8ebee; --muted:#9aa4ae; --accent:#e6317f; --teal:#35c4b5; }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  .wrap { max-width:72ch; margin:0 auto; padding:48px 22px 80px; }
+  a { color:var(--teal); }
+  h1 { font-size:clamp(28px,4vw,40px); margin:0 0 6px; }
+  h2 { font-size:20px; margin:34px 0 10px; }
+  .brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text); font-weight:600; margin-bottom:36px; }
+  .brand img { width:36px; height:36px; }
+  .lede { color:var(--muted); font-size:18px; margin:0 0 28px; }
+  .card { background:var(--card); border-radius:14px; padding:18px 22px; margin:14px 0; }
+  ul { padding-left:20px; } li { margin:6px 0; }
+  .muted { color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="brand" href="./"><img src="assets/chromatory-icon.png" alt="" /> Chromatory</a>
+
+  <h1>Privacy</h1>
+  <p class="lede">Chromatory runs on your PC. Your models, your paint library, your projects and your photos stay there. There is no account, no sign-in and no telemetry.</p>
+
+  <h2>What stays on your computer</h2>
+  <div class="card">
+    <ul>
+      <li>Every model file you load, every render, every project, painting log and photo.</li>
+      <li>Your paint inventory and colour matches.</li>
+      <li>Usage traces the app writes for its own support bundle. They never leave your PC unless you export a support bundle yourself and choose to send it.</li>
+    </ul>
+  </div>
+
+  <h2>When the app talks to the internet</h2>
+  <div class="card">
+    <ul>
+      <li><b>Update check.</b> At most once every twelve hours the app asks itch.io whether a newer version exists. The request carries the app's name and channel, nothing about you. You can switch it off in the app and it then never runs.</li>
+      <li><b>Cloud AI, only if you set it up.</b> Chromatory can use an AI provider you configure with your own key or your own subscription. When you ask it a question, that question and the photos or colours you attach go to the provider you chose, under that provider's privacy terms. Nothing is sent until you ask, and a local model on your own machine is supported instead.</li>
+      <li><b>Your own phone.</b> Pairing a phone happens on your home network with a short-lived code shown on your screen. Chromatory does not relay anything through a server; the phone talks directly to your PC.</li>
+    </ul>
+  </div>
+
+  <h2>What we collect</h2>
+  <div class="card">
+    <p style="margin:0">Nothing. Chromatory has no servers of its own and no analytics. Purchases are handled by the store you bought it from under that store's terms.</p>
+  </div>
+
+  <h2>Questions</h2>
+  <p>Ask on the <a href="https://spiffcow.itch.io/chromatory-studio" target="_blank" rel="noopener">Chromatory page on itch.io</a>.</p>
+
+  <p class="muted">Last updated 2 September 2026.</p>
+</div>
+</body>
+</html>
